@@ -11,46 +11,45 @@
 
 package com.plf.mybatis.binding;
 
+import com.plf.mybatis.session.SqlSession;
+
 import java.util.HashMap;
 import java.util.Map;
 
-import com.plf.mybatis.session.SqlSession;
-
 /**
  * 〈一句话功能简述〉
- * 
+ *
  * @author PLF
- * @date 2019年3月8日
  * @version 1.0
+ * @date 2019年3月8日
  */
 
-public class MapperRegistry
-{
-    /** the knownMappers */
+public class MapperRegistry {
+    /**
+     * the knownMappers
+     */
     private final Map<Class<?>, MapperProxyFactory<?>> knownMappers = new HashMap<>();
 
     /**
      * 注册代理工厂
-     * 
-     * @param type 
+     *
+     * @param type
      */
-    public <T> void addMapper(Class<T> type)
-    {
+    public <T> void addMapper(Class<T> type) {
         this.knownMappers.put(type, new MapperProxyFactory<T>(type));
     }
-    
+
     /**
      * 获取代理工厂实例
-     * 
+     *
      * @param type
      * @param sqlSession
-     * @return 
+     * @return
      */
     @SuppressWarnings("unchecked")
-    public <T> T getMapper(Class<T> type, SqlSession sqlSession)
-    {
-      MapperProxyFactory<T> mapperProxyFactory = (MapperProxyFactory<T>)this.knownMappers.get(type);
-      
-      return mapperProxyFactory.newInstance(sqlSession);
+    public <T> T getMapper(Class<T> type, SqlSession sqlSession) {
+        MapperProxyFactory<T> mapperProxyFactory = (MapperProxyFactory<T>) this.knownMappers.get(type);
+
+        return mapperProxyFactory.newInstance(sqlSession);
     }
 }

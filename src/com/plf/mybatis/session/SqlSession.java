@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.plf.mybatis.session;
 
@@ -9,64 +9,63 @@ import java.util.List;
 
 /**
  * SqlSession.java
- * 
+ *
  * @author PLF
  * @date 2019年3月6日
  */
-public interface SqlSession
-{
+public interface SqlSession {
 
     /**
      * 查询带条记录
-     * 
-     * @param statement
+     *
+     * @param statementId
      * @param parameter
-     * @return 
-     * @see 
+     * @return
+     * @see
      */
     <T> T selectOne(String statementId, Object parameter);
 
     /**
      * 查询多条记录
-     * 
-     * @param statement
+     *
+     * @param statementId
      * @param parameter
-     * @return 
-     * @see 
+     * @return
+     * @see
      */
     <E> List<E> selectList(String statementId, Object parameter);
 
     /**
      * update
-     * 
-     * @param statement
-     * @param parameter 
+     *
+     * @param statementId
+     * @param parameter
      */
     void update(String statementId, Object parameter);
-    
-    
+
+
     /**
      * insert
-     * 
+     *
      * @param statementId
-     * @param parameter 
+     * @param parameter
      */
     void insert(String statementId, Object parameter);
-    
+
     /**
      * 获取mapper
-     * 
+     *
      * @param paramClass
-     * @return 
-     * @see 
+     * @return
+     * @see
      */
     <T> T getMapper(Class<T> paramClass);
 
     /**
      * 获取配置类
-     * 
-     * @return 
-     * @see 
+     *
+     * @return
+     * @see
      */
     Configuration getConfiguration();
 }

@@ -1,16 +1,15 @@
 /**
- * 
+ *
  */
 package test.bean;
 
 /**
  * User.java
- * 
+ *
  * @author PLF
  * @date 2019年3月6日
  */
-public class User
-{
+public class User {
     /** the id */
     private String id;
 
@@ -20,8 +19,7 @@ public class User
     /**
      * @return Returns the id.
      */
-    public String getId()
-    {
+    public String getId() {
         return id;
     }
 
@@ -29,16 +27,14 @@ public class User
      * @param id
      *            The id to set.
      */
-    public void setId(String id)
-    {
+    public void setId(String id) {
         this.id = id;
     }
 
     /**
      * @return Returns the name.
      */
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
@@ -46,8 +42,7 @@ public class User
      * @param name
      *            The name to set.
      */
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -57,8 +52,7 @@ public class User
      * @return
      */
     @Override
-    public String toString()
-    {
+    public String toString() {
         return "User [id=" + id + ", name=" + name + "]";
     }
 
